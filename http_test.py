@@ -18,12 +18,19 @@ responce += "Content-Type:image/jpg\r\n"
 responce += "\r\n"
 responce = responce.encode()
 
-with open("wallhaven-0jl25p.png",'rb') as p:
-    while True:
-        data = p.read(1024)
-        if not data:
-            break
-        responce += data
+p = open("wallhaven-0jl25p.png",'rb')
+while True:
+    data = p.read(1024)
+    if not data:
+        break
+    responce += data
+
+# with open("wallhaven-0jl25p.png",'rb') as p:
+#     while True:
+#         data = p.read(1024)
+#         if not data:
+#             break
+#         responce += data
 
 c.send(responce)
 
